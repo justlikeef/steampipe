@@ -10,7 +10,7 @@ import (
 
 	_ "github.com/jackc/pgx/v4/stdlib"
 	"github.com/turbot/steampipe/cmd"
-	"github.com/turbot/steampipe/utils"
+	"github.com/turbot/steampipe/pkg/utils"
 )
 
 var exitCode int
