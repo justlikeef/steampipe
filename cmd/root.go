@@ -7,8 +7,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/turbot/steampipe/statushooks"
-	"github.com/turbot/steampipe/statusspinner"
+	"github.com/turbot/steampipe/pkg/statushooks"
+	"github.com/turbot/steampipe/pkg/statusspinner"
 
 	"github.com/hashicorp/go-hclog"
 	"github.com/mattn/go-isatty"
@@ -16,12 +16,12 @@ import (
 	"github.com/spf13/viper"
 	"github.com/turbot/go-kit/helpers"
 	"github.com/turbot/steampipe-plugin-sdk/logging"
-	"github.com/turbot/steampipe/cmdconfig"
-	"github.com/turbot/steampipe/constants"
-	"github.com/turbot/steampipe/filepaths"
-	"github.com/turbot/steampipe/steampipeconfig"
-	"github.com/turbot/steampipe/task"
-	"github.com/turbot/steampipe/utils"
+	"github.com/turbot/steampipe/pkg/cmdconfig"
+	"github.com/turbot/steampipe/pkg/constants"
+	"github.com/turbot/steampipe/pkg/filepaths"
+	"github.com/turbot/steampipe/pkg/steampipeconfig"
+	"github.com/turbot/steampipe/pkg/task"
+	"github.com/turbot/steampipe/pkg/utils"
 	"github.com/turbot/steampipe/version"
 )
 

@@ -6,9 +6,9 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/turbot/go-kit/helpers"
 	"github.com/turbot/steampipe-plugin-sdk/logging"
-	"github.com/turbot/steampipe/contexthelpers"
-	"github.com/turbot/steampipe/report/reportserver"
-	"github.com/turbot/steampipe/utils"
+	"github.com/turbot/steampipe/pkg/contexthelpers"
+	"github.com/turbot/steampipe/pkg/report/reportserver"
+	"github.com/turbot/steampipe/pkg/utils"
 )
 
 func runReportCmd(cmd *cobra.Command, args []string) {

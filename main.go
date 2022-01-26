@@ -5,12 +5,11 @@ import (
 	"fmt"
 	"os"
 
+	_ "github.com/jackc/pgx/v4/stdlib"
 	filehelpers "github.com/turbot/go-kit/files"
 	"github.com/turbot/go-kit/helpers"
-
-	_ "github.com/jackc/pgx/v4/stdlib"
 	"github.com/turbot/steampipe/cmd"
-	"github.com/turbot/steampipe/utils"
+	"github.com/turbot/steampipe/pkg/utils"
 )
 
 var exitCode int
