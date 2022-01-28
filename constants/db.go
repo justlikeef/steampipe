@@ -36,7 +36,7 @@ const (
 	// change this back for consistency
 	//DefaultEmbeddedPostgresImage = "us-docker.pkg.dev/steampipe/steampipe/db:" + DatabaseVersion
 	DefaultEmbeddedPostgresImage = "us-docker.pkg.dev/steampipe/steampipe/db:12.1.0-v2"
-	DefaultFdwImage              = "us-docker.pkg.dev/steampipe/steampipe/fdw:" + FdwVersion
+	FdwImageRef                  = "us-docker.pkg.dev/steampipe/steampipe/fdw:" + FdwVersion
 )
 
 // schema names

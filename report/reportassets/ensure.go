@@ -1,42 +1,31 @@
 package reportassets
 
 import (
+	"context"
 	_ "embed"
 	"encoding/json"
 	"log"
 	"os"
-	"path/filepath"
+
+	"github.com/turbot/steampipe/constants"
+	"github.com/turbot/steampipe/ociinstaller"
 
 	"github.com/turbot/go-kit/helpers"
 	"github.com/turbot/steampipe/filepaths"
-	"github.com/turbot/steampipe/utils"
-	"github.com/turbot/steampipe/version"
 )
 
-//go:embed assets.zip
-var reportAssets []byte
-
-const assetsZipFileName = "assets.zip"
-
-func Ensure() error {
+func Ensure(ctx context.Context) error {
 	// load report assets versions.json
 	versionFile, err := LoadReportAssetVersionFile()
 	if err != nil {
 		return err
 	}
-	if versionFile.Version == version.SteampipeVersion.String() {
+	if versionFile.Version == constants.AssetsVersion {
 		return nil
 	}
 
 	reportAssetsPath := filepaths.ReportAssetsPath()
-
-	zipPath := filepath.Join(os.TempDir(), assetsZipFileName)
-	err = os.WriteFile(zipPath, reportAssets, 0744)
-	defer os.RemoveAll(zipPath)
-
-	if _, err := utils.Unzip(zipPath, reportAssetsPath); err != nil {
-		return err
-	}
+	return ociinstaller.InstallAssets(ctx, reportAssetsPath)
 
 	return nil
 }

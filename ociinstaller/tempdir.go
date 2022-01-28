@@ -15,6 +15,7 @@ type tempDir struct {
 	Path string
 }
 
+// TODO do we need this?
 // NewTempDir :: returns the temp directory, creating it if it does not exist
 func NewTempDir(path string) *tempDir {
 	return &tempDir{

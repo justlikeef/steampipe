@@ -6,11 +6,14 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/turbot/steampipe/constants"
+
 	versionfile "github.com/turbot/steampipe/ociinstaller/versionfile"
 )
 
-// InstallFdw :: Install the Steampipe Hub Extension files from an OCI image
-func InstallFdw(ctx context.Context, imageRef string, dbLocation string) (string, error) {
+// InstallFdw Installs the Steampipe Postgres foreign data wrapper from an OCI image
+func InstallFdw(ctx context.Context, dbLocation string) (string, error) {
+	imageRef := constants.FdwImageRef
 	tempDir := NewTempDir(imageRef)
 	defer tempDir.Delete()
 
